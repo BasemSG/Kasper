@@ -1,0 +1,1067 @@
+/* Start Variables */
+:root {
+  --main-color: #19c8fa;
+  --transparent-color: rgb(15 116 143 / 70%);
+  --section-color: #777;
+  --section-padding: 100px;
+  --section-transition: 0.3s;
+}
+/* End Variables */
+/* Start Global Rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+}
+ul {
+  list-style: none;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* End Global Rules */
+/* start components */
+div.main-heading {
+  text-align: center;
+}
+div.main-heading h2 {
+  font-weight: normal;
+  font-size: 40px;
+  position: relative;
+  margin-bottom: 70px;
+  text-transform: uppercase;
+}
+div.main-heading h2::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 170px;
+  height: 2px;
+  bottom: -30px;
+  background: #333;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+div.main-heading h2::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333;
+  bottom: -40px;
+  background: white;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+}
+div.main-heading p {
+  margin: 0 auto 50px;
+  width: 550px;
+  max-width: 100%;
+  line-height: 2;
+  color: var(--section-color);
+}
+/* end components */
+/* start header  */
+header {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+header div.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  min-height: 100px;
+}
+div.container::after {
+  content: "";
+  position: absolute;
+  width: calc(100% - 30px);
+  height: 1px;
+  background: #a2a2a2;
+  bottom: 0;
+  left: 15px;
+}
+div.container a img {
+  height: 35px;
+}
+div.container nav {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+div.container nav i.links {
+  color: white;
+  font-size: 20px;
+}
+@media (min-width: 768px) {
+  div.container nav i.links {
+    display: none;
+  }
+}
+div.container nav i.links:hover + ul {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+div.container nav i.links:hover + ul li a {
+  padding: 20px;
+}
+div.container nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  div.container nav ul {
+    display: none;
+  }
+}
+div.container nav ul li {
+  width: 100%;
+  text-align: center;
+}
+div.container nav ul li a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 40px 10px;
+  transition: var(--section-transition);
+  -webkit-transition: var(--section-transition);
+  -moz-transition: var(--section-transition);
+  -ms-transition: var(--section-transition);
+  -o-transition: var(--section-transition);
+  position: relative;
+  z-index: 2;
+}
+div.container nav ul li a.active,
+div.container nav ul li a:hover {
+  color: var(--main-color);
+  border-bottom: 1px solid var(--main-color);
+}
+div.container nav div.form {
+  margin-left: 30px;
+  position: relative;
+  color: white;
+  border-left: 1px solid white;
+  width: 40px;
+  height: 30px;
+}
+div.container nav i.search-icon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 20px;
+  transition: var(--section-transition);
+}
+div.container nav i.search-icon:hover {
+  color: var(--main-color);
+}
+/* end header  */
+/* start landing */
+div.landing {
+  min-height: 100vh;
+  background-image: url(../images/landing.jpg);
+  background-size: cover;
+  position: relative;
+}
+div.landing div.layout {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 60%);
+}
+div.landing div.text {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50%;
+  padding: 50px;
+  color: white;
+  background: var(--transparent-color);
+  display: flex;
+  justify-content: flex-end;
+}
+@media (max-width: 767px) {
+  div.landing div.text {
+    width: 100%;
+  }
+}
+div.landing div.text div.content {
+  max-width: 500px;
+}
+@media (max-width: 767px) {
+  div.landing div.text div.content {
+    max-width: 100%;
+  }
+}
+div.landing div.text div.content h2 {
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+div.landing div.text div.content p {
+  font-size: 14px;
+  line-height: 2;
+}
+div.landing i.change-background {
+  position: absolute;
+  color: white;
+  font-size: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: var(--section-transition);
+}
+div.landing i.change-background:hover {
+  color: var(--main-color);
+}
+@media (max-width: 767px) {
+  div.landing i.change-background {
+    display: none;
+  }
+}
+div.landing i.left {
+  left: 30px;
+}
+div.landing i.right {
+  right: 30px;
+}
+div.landing ul.bullets {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100px;
+}
+div.landing ul.bullets li {
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
+  border-radius: 50%;
+  transition: var(--section-transition);
+}
+div.landing ul.bullets li:hover {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+}
+div.landing ul.bullets li.active {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+}
+/* end landing */
+/* start services */
+div.services {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+@media (min-width: 768px) {
+  div.services div.container div.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 60px 40px;
+  }
+}
+div.services div.container div.services-container div.serv-box {
+  display: flex;
+}
+@media (max-width: 767px) {
+  div.services div.container div.services-container div.serv-box {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+}
+div.services div.container div.services-container div.serv-box i.serv-icon {
+  margin-right: 50px;
+}
+@media (max-width: 767px) {
+  div.services div.container div.services-container div.serv-box i.serv-icon {
+    margin: 0 0 30px;
+  }
+}
+div.services div.container div.services-container div.serv-box div.text h3 {
+  margin-bottom: 30px;
+  color: var(--main-color);
+}
+div.services div.container div.services-container div.serv-box div.text p {
+  line-height: 2;
+  color: var(--section-color);
+}
+/* end services */
+/* start design */
+div.design {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  height: 600px;
+  position: relative;
+  background-image: url(../images/design-features.jpg);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+div.design::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 60%);
+}
+div.design div.images {
+  text-align: center;
+}
+@media (max-width: 767px) {
+  div.design div.images {
+    display: none;
+  }
+}
+div.design div.images,
+div.design div.text {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+}
+div.design div.images img {
+  position: relative;
+  bottom: -150px;
+}
+div.design div.text {
+  color: white;
+  padding: 50px;
+  background: var(--transparent-color);
+}
+div.design div.text h2 {
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+div.design div.text ul li {
+  padding: 15px 0;
+}
+div.design div.text ul li::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f108";
+  font-weight: 900;
+  margin-right: 20px;
+  position: relative;
+  top: 1px;
+}
+/* end design */
+/* start portfolio */
+div.portfolio {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+div.portfolio div.filters ul {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+div.portfolio div.filters ul li {
+  padding: 15px;
+  transition: var(--section-transition);
+}
+div.portfolio div.filters ul li.active,
+div.portfolio div.filters ul li:hover {
+  background: var(--main-color);
+  color: white;
+}
+div.portfolio div.imgs-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+div.portfolio div.imgs-container div.box {
+  position: relative;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  div.portfolio div.imgs-container div.box {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 1199px) {
+  div.portfolio div.imgs-container div.box {
+    flex-basis: 25%;
+  }
+}
+div.portfolio div.imgs-container div.box img {
+  max-width: 100%;
+  transition: var(--section-transition);
+  -webkit-transition: var(--section-transition);
+  -moz-transition: var(--section-transition);
+  -ms-transition: var(--section-transition);
+  -o-transition: var(--section-transition);
+}
+div.portfolio div.imgs-container div.box:hover img {
+  transform: rotate(3deg) scale(1.1);
+  -webkit-transform: rotate(3deg) scale(1.1);
+  -moz-transform: rotate(3deg) scale(1.1);
+  -ms-transform: rotate(3deg) scale(1.1);
+  -o-transform: rotate(3deg) scale(1.1);
+}
+div.portfolio div.imgs-container div.box div.caption {
+  position: absolute;
+  left: 0;
+  padding: 20px;
+  background: white;
+  width: 100%;
+  transition: var(--section-transition);
+  bottom: -100%;
+}
+div.portfolio div.imgs-container div.box:hover div.caption {
+  bottom: 0;
+}
+div.portfolio div.imgs-container div.box div.caption h4 {
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+div.portfolio div.imgs-container div.box div.caption p {
+  color: var(--main-color);
+}
+div.portfolio a.more {
+  color: white;
+  background: var(--main-color);
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  width: fit-content;
+  margin: 30px auto;
+  text-transform: uppercase;
+  transition: var(--section-transition);
+}
+div.portfolio a.more:hover {
+  box-shadow: 0 0 10px 4px #555;
+}
+/* end portfolio */
+/* start video */
+div.video {
+  position: relative;
+}
+div.video::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 60%);
+}
+div.video video {
+  max-width: 100%;
+}
+div.video div.text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  text-align: center;
+  background: var(--transparent-color);
+  padding: 50px;
+  width: 100%;
+  color: white;
+}
+div.video div.text h2 {
+  font-weight: normal;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  font-size: 30px;
+}
+div.video div.text p {
+  margin-bottom: 20px;
+}
+div.video div.text button {
+  background: black;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  min-width: 130px;
+  font-size: 20px;
+  border: none;
+  transition: var(--section-transition);
+}
+div.video div.text button:hover {
+  box-shadow: 0 0 10px 4px #eee;
+}
+/* end video */
+/* start about */
+div.about {
+  padding-top: var(--section-padding);
+  text-align: center;
+  overflow: hidden;
+}
+div.about div.container div.images img {
+  max-width: 100%;
+  position: relative;
+  bottom: -120px;
+  margin-top: -120px;
+}
+@media (max-width: 767px) {
+  div.about div.container div.images img {
+    bottom: -60px;
+    margin-top: -60px;
+  }
+}
+/* end about */
+/* start stats */
+div.stats {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  text-align: center;
+  background-image: url(../images/stats.png);
+  background-size: cover;
+  position: relative;
+}
+div.stats::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 60%);
+}
+div.stats div.container div.boxs {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+div.stats div.box {
+  color: white;
+  padding: 50px;
+  background-color: var(--transparent-color);
+}
+@media (max-width: 767px) {
+  div.stats div.box {
+    flex-basis: 100%;
+  }
+}
+@media (min-width: 768px) {
+  div.stats div.box {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 992px) {
+  div.stats div.box {
+    flex-basis: 25%;
+  }
+}
+div.stats div.box i.stats-icon {
+  width: 50px;
+  height: 50px;
+  background: black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 30px;
+  font-weight: 700;
+  font-size: 25px;
+}
+div.stats div.box div.number {
+  font-size: 50px;
+  font-weight: bold;
+  margin: 0 0 20px;
+}
+div.stats div.box p {
+  font-size: 14px;
+}
+/* end stats */
+/* start skills */
+div.skills {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+div.skills div.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media (min-width: 992px) {
+  div.skills div.container > div {
+    flex-basis: 45%;
+  }
+}
+div.skills div.container > div > h3 {
+  margin: 0 0 30px;
+  text-align: center;
+  font-weight: normal;
+}
+div.skills div.container > div > p {
+  color: var(--section-color);
+  line-height: 2;
+  text-align: center;
+  margin-bottom: 60px;
+}
+div.skills div.container div.info div.box {
+  display: flex;
+  margin-bottom: 30px;
+}
+div.skills div.container div.info div.box img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 50px;
+}
+@media (max-width: 767px) {
+  div.skills div.container div.info div.box {
+    flex-direction: column;
+    text-align: center;
+  }
+  div.skills div.container div.info div.box img {
+    margin: 0 auto 20px;
+  }
+}
+div.skills div.container div.info div.box div.text {
+  line-height: 1.8;
+  border-bottom: 1px solid #ccc;
+}
+div.skills div.container div.info div.box div.text p {
+  color: var(--section-color);
+  text-align: right;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+div.skills div.container div.info ul.bullets {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+}
+div.skills div.container div.info ul.bullets li {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid #a2a2a2;
+  margin: 0 5px;
+  transition: var(--section-transition);
+}
+div.skills div.container div.info ul.bullets li:hover {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+}
+div.skills div.container div.info ul.bullets li.active {
+  border-color: var(--main-color);
+  background: var(--main-color);
+}
+div.skills div.container div.skill div.prog-holder {
+  margin-bottom: 40px;
+}
+div.skills div.container div.skill div.prog-holder h4 {
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+div.skills div.container div.skill div.prog-holder div.prog {
+  background: #eee;
+  width: 100%;
+  height: 30px;
+}
+div.skills div.container div.skill div.prog-holder div.prog span {
+  display: block;
+  height: 100%;
+  position: relative;
+  background: var(--main-color);
+}
+div.skills div.container div.skill div.prog-holder div.prog span::before {
+  content: attr(data-progress);
+  background: black;
+  color: white;
+  position: absolute;
+  padding: 5px 0;
+  top: -40px;
+  right: -15px;
+  width: 40px;
+  text-align: center;
+  border-radius: 4px;
+}
+div.skills div.container div.skill div.prog-holder div.prog span::after {
+  content: "";
+  position: absolute;
+  right: -7px;
+  top: -13px;
+  border-style: solid;
+  border-width: 8px;
+  border-color: black transparent transparent transparent;
+}
+/* end skills */
+/* start quote */
+div.quote {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-image: url(../images/quote.jpg);
+  background-size: cover;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+div.quote::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 75%);
+}
+div.quote div.text {
+  position: relative;
+  z-index: 2;
+}
+div.quote q {
+  font-weight: 700;
+  font-size: 25px;
+  margin-bottom: 30px;
+  display: block;
+}
+div.quote p {
+  font-size: 14px;
+}
+/* end quote */
+/* stat pricing */
+div.pricing {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+div.pricing div.container div.plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  text-align: center;
+}
+div.pricing div.container div.plans div.plan {
+  border-top: 1px solid var(--main-color);
+  padding: 20px 0;
+  background-color: #fcfcfc;
+}
+div.pricing div.container div.plans div.plan h4 {
+  font-weight: normal;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+div.pricing div.container div.plans div.plan p {
+  font-size: 45px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--main-color);
+}
+div.pricing div.container div.plans div.plan span {
+  font-weight: bold;
+  font-size: 60px;
+  margin: 0 10px;
+}
+div.pricing div.container div.plans div.plan ul.features {
+  line-height: 2;
+  padding: 20px 0;
+}
+div.pricing div.container div.plans div.plan ul.features li {
+  border-bottom: 1px solid var(--main-color);
+  width: fit-content;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+div.pricing div.container div.plans div.plan ul.features li:last-of-type {
+  width: 100%;
+}
+div.pricing div.container div.plans div.plan a {
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+  background: var(--main-color);
+  border-radius: 50px;
+  display: block;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 20px;
+  transition: var(--section-transition);
+}
+div.pricing div.container div.plans div.plan a:hover {
+  box-shadow: 0 0 10px 4px #555;
+}
+div.pricing div.container div.text {
+  text-align: center;
+  line-height: 2;
+  padding: 20px 0;
+}
+div.pricing div.container div.text p {
+  font-size: 20px;
+}
+div.pricing div.container div.text a {
+  padding: 5px 10px;
+  font-size: 20px;
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  background: var(--main-color);
+  margin: 20px 0;
+  border-radius: 5px;
+  min-width: 150px;
+  transition: var(--section-transition);
+}
+div.pricing div.container div.text a:hover {
+  box-shadow: 0 0 10px 4px #555;
+}
+/* end pricing */
+/* start subscribe */
+div.subscribe {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-image: url(../images/subscribe.jpg);
+  background-size: cover;
+  position: relative;
+  color: white;
+}
+div.subscribe::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgb(0 0 0 / 60%);
+}
+div.subscribe div.container div.text {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 991px) {
+  div.subscribe div.container div.text {
+    flex-direction: column;
+  }
+}
+div.subscribe div.container div.text form {
+  display: flex;
+  position: relative;
+  width: 500px;
+  max-width: 100%;
+}
+div.subscribe div.container div.text form i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 25px;
+}
+div.subscribe div.container div.text form input[type="email"] {
+  border: 1px solid white;
+  background-color: transparent;
+  padding: 20px 20px 20px 60px;
+  caret-color: var(--main-color);
+  width: calc(100% - 130px);
+  border-right: none;
+}
+div.subscribe div.container div.text form ::placeholder {
+  color: white;
+}
+div.subscribe div.container div.text form input[type="submit"] {
+  width: 130px;
+  background: var(--main-color);
+  border: 1px solid white;
+  color: white;
+  border-left: none;
+  padding: 10px 20px;
+}
+div.subscribe div.container div.text form input[type="submit"]:focus,
+div.subscribe div.container div.text form input[type="email"]:focus {
+  outline: none;
+}
+
+div.subscribe div.container div.text p {
+  line-height: 2;
+  margin-left: 50px;
+}
+@media (max-width: 991px) {
+  div.subscribe div.container div.text p {
+    margin: 30px 0 0;
+  }
+}
+/* end subscribe */
+/* start contact */
+div.contact {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+div.contact div.container div.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media (max-width: 767px) {
+  div.contact div.container div.content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+div.contact div.container div.content form {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+div.contact div.container div.content form textarea {
+  min-height: 150px;
+}
+div.contact div.container div.content form input,
+div.contact div.container div.content form textarea {
+  margin: 20px 0;
+  outline: none;
+  padding: 20px 40px;
+  border: 1px solid #ccc;
+}
+div.contact div.container div.content form input[type="submit"] {
+  width: fit-content;
+  padding: 20px;
+  border: none;
+  background: var(--main-color);
+  color: white;
+  align-self: flex-end;
+  transition: var(--section-transition);
+}
+div.contact div.container div.content form input[type="submit"]:hover {
+  box-shadow: 0 0 10px 4px #555;
+}
+div.contact div.container div.content div.info {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media (max-width: 767px) {
+  div.contact div.container div.content div.info {
+    order: -1;
+    text-align: center;
+    width: 100%;
+  }
+}
+div.contact div.container div.content div.info > div {
+  line-height: 2;
+}
+@media (max-width: 767px) {
+  div.contact div.container div.content div.info > div {
+    margin: 40px 0;
+  }
+}
+div.contact div.container div.content div.info div.tel {
+  margin-top: 10px;
+}
+div.contact div.container div.content div.info div.location {
+  margin-bottom: 100px;
+}
+div.contact div.container div.content div.info h3 {
+  font-weight: normal;
+  margin-bottom: 20px;
+  font-size: 17px;
+}
+div.contact div.container div.content div.info p {
+  color: var(--section-color);
+}
+/* end contact */
+/* start footer */
+footer {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-image: url(../images/subscribe.jpg);
+  background-size: cover;
+  position: relative;
+  color: white;
+}
+footer::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 60%);
+}
+footer div.container div.foot {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+footer div.container div.foot img {
+  margin-bottom: 50px;
+  margin-top: -50px;
+}
+footer div.container div.foot p:first-of-type {
+  padding: 20px 0;
+  border-bottom: 1px solid;
+  width: 170px;
+  margin: 0 auto 30px;
+}
+footer div.container div.foot div.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer div.container div.foot div.social i {
+  color: white;
+  font-weight: 900;
+  font-size: 22px;
+  padding: 20px;
+  margin-bottom: 40px;
+  transition: var(--section-transition);
+}
+footer div.container div.foot div.social i:hover {
+  color: var(--main-color);
+}
+footer div.container div.foot p.copyright {
+  font-size: 15px;
+}
+footer div.container div.foot p.copyright span {
+  color: var(--main-color);
+  font-weight: 700;
+}
+/* end footer */
